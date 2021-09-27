@@ -1,14 +1,10 @@
 import { Component } from "react";
-import shortid from "shortid";
-//import { uuid } from "uuid";
 
 class Form extends Component {
   state = {
     name: "",
     number: "",
   };
-  nameImputId = shortid.generate();
-  numberImputId = shortid.generate();
 
   handleChange = (event) => {
     const { name, value } = event.currentTarget;
