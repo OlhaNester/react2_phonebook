@@ -1,4 +1,5 @@
 import { Component } from "react";
+import './Form.css';
 
 class Form extends Component {
   state = {
@@ -25,7 +26,7 @@ class Form extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="Form" onSubmit={this.handleSubmit}>
         <label htmlFor={this.nameImputId}>
           Name
           <input
@@ -52,7 +53,7 @@ class Form extends Component {
             required
           />
         </label>
-        <button type="submit">Add contact</button>
+        <button type="submit"className="button">  Add contact</button>
       </form>
     );
   }

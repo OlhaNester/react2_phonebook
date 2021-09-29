@@ -1,3 +1,16 @@
 .App {
+  width: 600px;
+  padding: 20px;
   text-align: center;
+  background-image: url("./backdrop.jpg");
+  background-size: cover;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1,
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: rgb(105, 46, 3);
 }
