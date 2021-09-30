@@ -7,10 +7,12 @@ import shortid from "shortid";
 
 class App extends Component {
   state = {
-    contacts: [ {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},],
+    contacts: [
+      { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
+      { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
+      { id: "id-3", name: "Eden Clements", number: "645-17-79" },
+      { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
+    ],
     filter: "",
   };
 
@@ -24,7 +26,8 @@ class App extends Component {
       name: name,
       number: number,
     };
-    if (// несколько вариантов сравнения и записи новых имен
+    if (
+      // несколько вариантов сравнения и записи новых имен
       //this.state.contacts.map((contact) => contact.name).includes(contact.name)
       this.state.contacts.find(
         (contact) => contact.name === newContact.name
@@ -59,7 +62,11 @@ class App extends Component {
       contact.name.toLowerCase().includes(normolizeFilter)
     );
   };
-
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    }
+  }
   render() {
     const filteredContactList = this.getfilteredContactList();
     return (
