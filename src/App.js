@@ -62,6 +62,11 @@ class App extends Component {
       contact.name.toLowerCase().includes(normolizeFilter)
     );
   };
+  componentDidMount() {
+    const contacts = localStorage.getItem("contacts");
+    const parseContacts = JSON.parse(contacts);
+    this.setState({ contacts: parseContacts });
+  }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
