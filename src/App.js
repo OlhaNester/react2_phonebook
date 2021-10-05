@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./components/Form";
 import ContactList from "./components/ContactList";
 import Filter from "./components/Filter";
+import IconButton from "./components/IconButton/IconButton";
 import shortid from "shortid";
 
 class App extends Component {

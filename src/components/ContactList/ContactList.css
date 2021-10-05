@@ -59,3 +59,14 @@
 .btn_delete:focus {
   outline: none;
 }
+
+.IconButton {
+  border: none;
+  width: 30px;
+  background: transparent;
+  outline: none;
+  border: none;
+  /* display: inline-flex;
+  align-items: center;
+  justify-content: center; */
+}
