@@ -1,5 +1,6 @@
 import { Component } from "react";
-import './Form.css';
+
+import "./Form.css";
 
 class Form extends Component {
   state = {
@@ -53,7 +54,11 @@ class Form extends Component {
             required
           />
         </label>
-        <button type="submit"className="button">  Add contact</button>
+
+        <button type="submit" className="button">
+          {" "}
+          Add contact
+        </button>
       </form>
     );
   }
