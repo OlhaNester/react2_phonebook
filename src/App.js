@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./components/Form";
 import ContactList from "./components/ContactList";
 import Filter from "./components/Filter";
+import Modal from "./components/Modal/Modal";
 //import IconButton from "./components/IconButton/IconButton";
 import shortid from "shortid";
 
@@ -10,11 +11,18 @@ class App extends Component {
   state = {
     contacts: [],
     filter: "",
+    showModal: false,
   };
 
   // formHandleSubmit = (data) => {
   //   console.log(data);
   // };
+
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
 
   addContact = ({ name, number }) => {
     const newContact = {
@@ -76,6 +84,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1> Phonebook </h1>
+        <button type="button" onClick={this.toggleModal}>
+          Add Contact
+        </button>
+        {this.state.showModal && <Modal onClose={this.toggleModal}></Modal>}
         <Form onSubmit={this.addContact} />
         <h2> Contacts </h2>
         <Filter value={this.state.filter} onChange={this.filterContact} />
