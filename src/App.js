@@ -45,6 +45,7 @@ class App extends Component {
         contacts: [newContact, ...prevState.contacts],
       }));
     }
+    this.toggleModal();
   };
 
   deleteContact = (contactId) => {
@@ -84,11 +85,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1> Phonebook </h1>
-        <button type="button" onClick={this.toggleModal}>
+        <button type="button" className="button" onClick={this.toggleModal}>
           Add Contact
         </button>
-        {this.state.showModal && <Modal onClose={this.toggleModal}></Modal>}
-        <Form onSubmit={this.addContact} />
+        {this.state.showModal && <Modal onClose={this.toggleModal}>
+          <Form onSubmit={this.addContact} />
+         
+        </Modal>}
+        
         <h2> Contacts </h2>
         <Filter value={this.state.filter} onChange={this.filterContact} />
         <ContactList

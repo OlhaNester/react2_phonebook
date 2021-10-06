@@ -1,10 +1,11 @@
 .ContactList {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 0;
+  padding: 0;
+  justify-content: space-around;
 }
-/* .ContactList:not(:nth-child(3n)) {
-  margin-right: 10px;
-} */
+
 .card_contact {
   position: relative;
   box-sizing: content-box;
@@ -22,7 +23,6 @@
 
 .card_contact:nth-child(n) {
   margin-bottom: 40px;
-  margin-right: 10px;
 }
 .btn_delete {
   position: absolute;
@@ -44,15 +44,10 @@
 }
 
 .btn_delete:hover {
-  /* transform: scale(1.1);
-  box-shadow: 0px 5px 10px 2px rgba(10, 18, 24, 0.2);
-  background-color: rgba(105, 69, 2, 0.883);
-  color: white;
-  border: 2px solid #5d4502; */
   background: #7c4d01;
   box-shadow: 0 15px 20px rgba(226, 139, 58, 0.4);
   color: white;
-  /* transform: translateY(-7px); */
+  transform: translateY(-7px);
 }
 .btn_delete,
 .btn_delete:active,
